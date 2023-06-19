@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  chatgpt-web:
+    #image: chenzhaoyu94/chatgpt-web
+    image: registry.cn-hangzhou.aliyuncs.com/sijinhui/chatgpt-web
+    ports:
+      - 23002:3002
+    environment:
+      OPENAI_API_KEY: 921c59624e01430e991e1e57b900d681
+      OPENAI_API_BASE_URL: http://azure-openai:8080
+      #OPENAI_API_MODEL: "gpt-3.5-turbo-16k-0613"
+      AUTH_SECRET_KEY: ""
+      MAX_REQUEST_PER_HOUR: 1000
+      TIMEOUT_MS: 60000
+    depends_on:
+      - azure-openai
+    links:
+      - azure-openai
+    networks:
+      - chatgpt-ns
+
+  azure-openai:
+    image: stulzq/azure-openai-proxy
+    ports:
+      - 28080:8080
+    environment:
+      AZURE_OPENAI_ENDPOINT: https://ainnovation-test-02.openai.azure.com/
+      AZURE_OPENAI_MODEL_MAPPER: gpt-3.5-turbo=gpt-35-turbo
+      AZURE_OPENAI_API_VER: 2023-03-15-preview
+    networks:
+      - chatgpt-ns
+
+networks:
+  chatgpt-ns:
+    driver: bridge
