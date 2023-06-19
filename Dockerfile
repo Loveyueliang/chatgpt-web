@@ -1,5 +1,5 @@
 # build front-end
-FROM node:lts-alpine AS frontend
+FROM registry.cn-hangzhou.aliyuncs.com/sijinhui/node:lts-alpine AS frontend
 
 RUN npm install pnpm -g
 
