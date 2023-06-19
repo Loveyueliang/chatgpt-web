@@ -15,10 +15,10 @@ services:
       AUTH_SECRET_KEY: ""
       MAX_REQUEST_PER_HOUR: 1000
       TIMEOUT_MS: 60000
-    depends_on:
-      - azure-openai
-    links:
-      - azure-openai
+#    depends_on:
+#      - azure-openai
+#    links:
+#      - azure-openai
     networks:
       - chatgpt-ns
 
