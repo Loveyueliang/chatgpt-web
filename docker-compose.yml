@@ -2,10 +2,10 @@ version: '3'
 
 services:
   chatgpt-web:
-    #image: chenzhaoyu94/chatgpt-web
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    image: registry.cn-hangzhou.aliyuncs.com/sijinhui/chatgpt-web
+#    build:
+#      context: ./
+#      dockerfile: Dockerfile
     ports:
       - 23002:3002
     environment:
