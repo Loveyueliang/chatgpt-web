@@ -35,4 +35,4 @@ services:
 
 networks:
   chatgpt-ns:
-    driver: bridge
+    external: true
