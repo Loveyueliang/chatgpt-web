@@ -6,9 +6,9 @@ services:
     ports:
       - 23002:3002
     environment:
-      OPENAI_API_KEY: "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"
-      OPENAI_API_BASE_URL: "https://api.openai-proxy.com"
-      OPENAI_API_MODEL: "gpt-3.5-turbo-16k-0613"
+      OPENAI_API_KEY: "sk-EvJWtSGQ1S07tLLH4aAa450dC4414bAdAe2c9aE185420841"
+      OPENAI_API_BASE_URL: "https://api.gptmf.top"
+      OPENAI_API_MODEL: "gpt-4-0613"
       AUTH_SECRET_KEY: ""
       MAX_REQUEST_PER_HOUR: 1000
       TIMEOUT_MS: 60000
